@@ -1,6 +1,6 @@
 <h1>Solving MNIST with ORACLE database</h1>
 
-This sql files will create a Pluggable DB and the needed configuration to create a NN model for the MNIST database with sql*plus.
+These sql files will create a Pluggable DB and the needed configuration to create a NN model for the MNIST database with sql*plus.
 
 This example will run directly on this virtual machine:
 https://github.com/srivera1/debianOracleFree
@@ -45,7 +45,7 @@ https://github.com/srivera1/debianOracleFree
     -  calculates errors
 
 - mnist_open.sql
-    -  quick open de pluggable in already created
+    -  quick open de pluggable if already created
 
 - mnist_get_category.sql
     -  model execution example
