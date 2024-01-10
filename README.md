@@ -7,10 +7,10 @@ https://github.com/srivera1/debianOracleFree
 
 <h3>Steps:</h3>
 
-0) Clone this repo
-1) cd mnist_oracle
-2) tar -xf mnist_test_INSERT.sql.tar.gz
-3) tar -xf mnist_train_INSERT.sql.tar.gz
+0) $ git clone git@github.com:srivera1/mnist_oracle.git
+1) $ cd mnist_oracle
+2) $ tar -xf mnist_test_INSERT.sql.tar.gz
+3) $ tar -xf mnist_train_INSERT.sql.tar.gz
 4) replace "FREE" (ORACLE 23c) by "XE" (ORACLE 21c) if needed (at mnist_create_pluggable.sql and mnist_open.sql)
 5) replace port 1521, host and sys password if needed (at mnist_create_pluggable.sql and mnist_open.sql):
 
