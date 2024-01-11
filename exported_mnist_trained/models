@@ -1,0 +1,28 @@
+-- Sergio Rivera 2023
+--
+-- Some tested models
+--
+--
+
+Model 1
+  ·  mnist_train_NN_DEEP_NN_v101.sql
+  ·  NNET_NODES_PER_LAYER
+  ·  215,30,30,5
+  ·  DEEP_NN_v101.dmp
+  ·  DM_EXP_152250.log
+
+  % error en test  3.83
+  % error en train 2.56
+
+
+Model 2
+  ·  NNET_NODES_PER_LAYER
+  ·  '1024,512,256,128,64,32,16'
+
+  Worse fit than model 1
+ 
+
+
+
+
+

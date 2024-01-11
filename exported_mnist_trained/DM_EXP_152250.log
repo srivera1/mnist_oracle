@@ -1,0 +1,21 @@
+Starting "MNIST"."DM_EXP_1522":  DM_EXPIMP_JOB_ID=461
+Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
+Processing object type TABLE_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+Processing object type TABLE_EXPORT/TABLE/TABLE
+Processing object type TABLE_EXPORT/TABLE/INDEX/INDEX
+Processing object type TABLE_EXPORT/TABLE/POST_INSTANCE/PROCDEPOBJ/OAA
+. . exported "MNIST"."DM$PFDEEP_LEARNING_MODEL"          3.447 MB  168775 rows
+. . exported "MNIST"."DM$P5DEEP_LEARNING_MODEL"          1.416 MB     844 rows
+. . exported "MNIST"."DM$PWDEEP_LEARNING_MODEL"          174.6 KB    7625 rows
+. . exported "MNIST"."DM$PMDEEP_LEARNING_MODEL"          37.03 KB     784 rows
+. . exported "MNIST"."DM$PDDEEP_LEARNING_MODEL"          19.03 KB     784 rows
+. . exported "MNIST"."DM$PKDEEP_LEARNING_MODEL"          7.453 KB      10 rows
+. . exported "MNIST"."DM$PPDEEP_LEARNING_MODEL"          7.023 KB       5 rows
+. . exported "MNIST"."DM$PSDEEP_LEARNING_MODEL"            6.5 KB       4 rows
+. . exported "MNIST"."DM$PJDEEP_LEARNING_MODEL"              0 KB       0 rows
+Master table "MNIST"."DM_EXP_1522" successfully loaded/unloaded
+******************************************************************************
+Dump file set for MNIST.DM_EXP_1522 is:
+  /tmp/exported_mnist_trained/DEEP_NN_v101.dmp
+Job "MNIST"."DM_EXP_1522" successfully completed at Thu Jan 11 11:04:55 2024 elapsed 0 00:03:15

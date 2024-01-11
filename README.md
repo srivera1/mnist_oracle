@@ -33,10 +33,10 @@ https://github.com/srivera1/debianOracleFree
         - mnist_train_INSERT.sql
         - mnist_train_NN.sql
 
-- mnist_test_INSERT.sql.tar.gz
+- mnist_test_INSERT.sql
     -  insert data into test table
 
-- mnist_train_INSERT.sql.tar.gz
+- mnist_train_INSERT.sql
     -  insert data into train table
 
 - mnist_train_NN.sql
@@ -49,6 +49,18 @@ https://github.com/srivera1/debianOracleFree
 
 - mnist_get_category.sql
     -  model execution example
+
+- mnist_export_model.sql
+    -  model saving script
+
+- mnist_import_model.sql
+    -  importing a saved model
+
+- exported_mnist_trained.sql
+    -  folder containing saved models
+    -  models here may be imported to the database
+       with the script mnist_import_model.sql
+
 
 <h3>TODO:</h3>
 
