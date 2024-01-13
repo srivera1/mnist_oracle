@@ -39,12 +39,6 @@ BEGIN
 --     NNET_SOLVER_LBFGS
 -- Specifies the method of optimization.
 -- The default value is system determined.
--- CUADR_ERR_TOTAL <--> NNET_SOLVER_LBFGS
--- ---------------
---       55.697495
--- CUADR_ERR_TOTAL <--> NNET_SOLVER_ADAM
--- ---------------
---      88.9696444
         'NNET_SOLVER_LBFGS'
     );
 
@@ -90,7 +84,7 @@ BEGIN
 -- 0 <= numeric_expr <=1
 -- Define the held ratio for the held-aside method.
 -- The default value is 0.25.
-        0.019991
+        0.19991
     );
 
     INSERT INTO neural_network_settings (
@@ -101,7 +95,7 @@ BEGIN
 -- A positive integer
 -- Defines the topology by the number of hidden layers.
 -- The default value is 1.
-        7
+        4
     );
 
     INSERT INTO neural_network_settings (
@@ -126,7 +120,7 @@ BEGIN
 -- To specify the same number of nodes for each layer, you can provide a single value, which is then applied to each layer.
 -- To specify a different number of nodes for one or more layers, provide a list of comma-separated positive integers, one for each layer. For example, '10, 20, 5' for three layers. The setting values must be consistent with the NNET_HIDDEN_LAYERS value.
 -- The default number of nodes per layer is the number of attributes or 50 (if the number of attributes > 50).
-        '1024,512,256,128,64,32,16'    
+        '512,256,128,5'    
     );
 
 --     INSERT INTO neural_network_settings (
@@ -301,7 +295,7 @@ END;
 select * from all_mining_model_settings where model_name='DEEP_LEARNING_MODEL';
 
 SELECT T.RES,
- PREDICTION (DEEP_LEARNING_MODEL5 USING *) NN_RES
+ PREDICTION (DEEP_LEARNING_MODEL USING *) NN_RES
 FROM MNIST_TEST T where (rownum <134);
 
 
@@ -309,7 +303,7 @@ FROM MNIST_TEST T where (rownum <134);
 WITH T(ID, RES, NN_RES) AS
 (SELECT ID, RES,
  PREDICTION (DEEP_LEARNING_MODEL USING *) NN_RES
-FROM MNIST_TEST where rownum< 131)
+FROM MNIST_TEST)
 select M.RES real_val, T.RES trained_val, T.NN_RES model_val, round(T.NN_RES), abs(round(T.NN_RES)-T.RES) err
 from T
 join MNIST_TEST M
@@ -319,7 +313,7 @@ ON M.ID = T.ID;
 WITH T(ID, RES, NN_RES) AS
 (SELECT ID, RES,
  PREDICTION (DEEP_LEARNING_MODEL USING *) NN_RES
-FROM MNIST_TEST where rownum< 131)
+FROM MNIST_TEST)
 select sum((T.NN_RES-M.RES)*(T.NN_RES-M.RES)) cuadr_err_total
 from T
 join MNIST_TEST M
@@ -329,7 +323,7 @@ ON M.ID = T.ID;
 WITH T(ID, RES, NN_RES) AS
 (SELECT ID, RES,
  PREDICTION (DEEP_LEARNING_MODEL USING *) NN_RES
-FROM MNIST_TEST where rownum< 131)
+FROM MNIST_TEST)
 select sum( DECODE( ABS(T.NN_RES-M.RES)>0.5, TRUE, 1, FALSE, 0 ) )/count(*)*100 "% error en test"
 from T
 join MNIST_TEST M
@@ -338,7 +332,7 @@ ON M.ID = T.ID;
 WITH T(ID, RES, NN_RES) AS
 (SELECT ID, RES,
  PREDICTION (DEEP_LEARNING_MODEL USING *) NN_RES
-FROM MNIST where rownum< 131)
+FROM MNIST)
 select sum( DECODE( ABS(T.NN_RES-M.RES)>0.5, TRUE, 1, FALSE, 0 ) )/count(*)*100 "% error en train"
 from T
 join MNIST M
